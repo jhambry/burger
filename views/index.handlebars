@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="row">
+    <div class="col s12 center-align">
+        <br>
+        <br>
+      <img class="center-align" id="logo" src="assets/img/LegendsofNotreDame100NotreDameIN.png"></img>
+      <h3 class="center-align" id="blurb">Type in the name of a burger that you want to eat</h3> 
+      <form method="POST" action="/" class="button-size text-center">
+        <textarea type="text" id="burger_name" name="burger_name" data-error="wrong" data-success="right" required></textarea>
+        <br>
+        <br>
+        <button class="waves-effect waves-light green btn" style="color: black" type="submit">Order it!</button>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header center-align">
+          <h5 id="title2">Ready To Eat</h5></li>
+         {{#each burgers}} {{#unless this.devoured}}
+        <li class="collection-item avatar">
+          <img src="assets/img/LegendsofNotreDame100NotreDameIN.png" alt="" class="circle">
+          <span class="title">
+            {{this.id}}. {{this.burger_name}}</span>
+          <form action="/{{this.id}}?_method=PUT" method="POST">
+            <input type="hidden" name="id" value="{{this.devoured}}">
+            <br>
+            <button class="waves-effect waves-light btn-floating btn-large secondary-content green darken-1" type="submit">EAT!</button>
+          </form>
+        </li>
+        {{/unless}} {{/each}} 
+      </ul>
+    </div>
+    <div class="col s12 m6">
+      <ul class="collection with-header">
+        <li class="collection-header center-align">
+          <h5 id="title3">Devoured Burgers</h5></li>
+         {{#each burgers}} {{#if this.devoured}}
+        <li class="collection-item avatar">
+          <span class="title grey-text text-darken-1">
+
+              {{this.id}}. {{this.burger_name}}
+
+          </span> {{/if}} {{/each}}
+      </ul>
+    </div>
+  </div>
+</div>

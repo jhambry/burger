@@ -1,0 +1,42 @@
+import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+h1 {
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.page-footer {
+  background-color:green;
+  color: black;
+}
+
+body {
+  background-color: gray;
+}
+
+#burger_name {
+  background-color: white;
+}
+
+#legends {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: goldenrod;
+}
+
+#blurb {
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: black;
+}
+#title2, #title3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 3em;
+}
+textarea {
+    padding-top: .75em;
+    white-space: normal;
+    text-align: justify;
+    -moz-text-align-last: center; /* Firefox 12+ */
+    text-align-last: center;
